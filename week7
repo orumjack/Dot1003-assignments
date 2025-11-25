@@ -1,1 +1,52 @@
+#assignment2
+def go_left():
+    print("There is a wild cat licking his paws. Better to be avoid.")
 
+def go_right():
+    print("You find a treasure chest!")
+    print("Open it and find some gold coins!")
+
+def idle():
+    print("You can't start an adventure by waiting.")
+    print("You're boring...")
+
+def start_adventure():
+    print("Welcome to the Simple Adventure Game!")
+    choice = input(">Please make a choice -> idle, left, right: ")
+
+    if choice == "left":
+        go_left()
+    elif choice == "right":
+        go_right()
+    elif choice == "idle":
+        idle()
+    else:
+        print("invalid Input")
+        start_adventure() 
+
+
+start_adventure()
+
+#assignment3
+def spruce():
+    height = int(input("Spruce height: "))
+    box_size = int(input("Box Size: "))
+
+    print("-" * box_size)
+
+    print("|" + " " * (box_size - 2) + "|")
+
+    for i in range(1, height + 1):
+        stars = "*" * (2 * i - 1)
+        left_padding = (box_size - 2 - len(stars)) // 2
+        line = "|" + " " * left_padding + stars + " " * (box_size - 2 - left_padding - len(stars)) + "|"
+        print(line)
+
+    trunk_padding = (box_size - 2 - 1) // 2
+    trunk_line = "|" + " " * trunk_padding + "*" + " " * (box_size - 2 - trunk_padding - 1) + "|"
+    print(trunk_line)
+
+    print("-" * box_size)
+
+
+spruce()
