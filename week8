@@ -1,0 +1,26 @@
+def anarya(lst):
+    reversed_list = []
+    index = len(lst) - 1
+
+    while index >= 0:
+        reversed_list.append(lst[index])
+        index -= 1
+
+    return reversed_list
+
+
+def main():
+    game_list = []
+
+    while True:
+        game = input("Enter a game, enter 'exit' to exit: ")
+
+        if game == "exit":
+            print(game_list)
+            print(anarya(game_list))
+            return
+
+        game_list.append(game)
+
+
+main()
